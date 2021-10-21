@@ -1,12 +1,21 @@
+const checkBtn = document.querySelector("button");
 var string_inner_container = document.getElementById('string_inner_container')
-string_inner_container.innerHTML = 'Ticket ID: ' + create_random_string(7)
 
-function create_random_string (string_length) {
-    var random_string = ' ';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-    for (var i, i = 0; i < string_length; i++) {
-        random_string += characters.charAt(Math.floor(Math.random() * characters.length));
+
+
+checkBtn.addEventListener('click', e => {
+    e.preventDefault();
+
+string_inner_container.innerHTML = 'Ticket ID: ' + createRandom(7)
+});
+
+    function createRandom(string_length) {
+        let randomString = ' ';
+        let characters = '0123456789'
+        for (var i, i = 0; i < string_length; i++) {
+            randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return randomString
+
     }
-    return random_string
-}
 
